@@ -4,7 +4,7 @@ const httpRequest = axios.create({
     baseURL:
         process.env.NODE_ENV !== 'production'
             ? process.env.REACT_APP_BASE_URL
-            : 'https://mern-learnit-t3zg.onrender.com/api',
+            : 'https://mern-learnit-t3zg.onrender.com/api/',
 });
 
 export const get = async (path) => {
