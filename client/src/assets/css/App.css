@@ -1,0 +1,19 @@
+/* Add new post tooltip */
+.tooltip {
+    background: transparent;
+}
+
+.tooltip .arrow::before {
+    border-left-color: #78c2ad;
+}
+
+.tooltip-inner {
+    background: #78c2ad;
+}
+
+/* Post border thicker */
+.border-success,
+.border-warning,
+.border-danger {
+    border-width: 2px;
+}

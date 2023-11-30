@@ -1,0 +1,33 @@
+.landing {
+    position: relative;
+    background: url('../../assets/images/landing.jpg') no-repeat center center/cover;
+    height: 100vh;
+    &-inner {
+        height: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.landing-inner {
+    h1 {
+        color: white;
+        font-size: 5rem;
+    }
+    p {
+        color: white;
+        font-size: 1.6rem;
+    }
+    & form {
+        width: 30%;
+    }
+}
+
+.dark-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
