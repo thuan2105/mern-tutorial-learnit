@@ -8,7 +8,9 @@ const httpRequest = axios.create({
 });
 
 export const get = async (path) => {
-    const response = await axios.get(process.env.REACT_APP_BASE_URL + path);
+    const response = await axios.get(
+        (process.env.REACT_APP_BASE_URL || 'https://mern-learnit-t3zg.onrender.com/api/') + path,
+    );
     return response;
 };
 

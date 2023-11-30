@@ -1,5 +1,6 @@
 import * as httpRequest from '~/utils/httpRequest';
 import { LOCAL_STORAGE_TOKEN_NAME } from './constants';
+
 export const loginUser = async (userForm) => {
     try {
         const response = await httpRequest.post('auth/login', userForm);
@@ -8,5 +9,14 @@ export const loginUser = async (userForm) => {
     } catch (error) {
         if (error.response) return error.response;
         else return { success: false, message: error.message };
+    }
+};
+
+export const getUser = async () => {
+    try {
+        const response = await httpRequest.get('auth');
+        return response.data;
+    } catch (error) {
+        console.log(error);
     }
 };

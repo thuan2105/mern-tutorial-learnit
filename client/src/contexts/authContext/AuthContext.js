@@ -4,7 +4,7 @@ import { authReducer } from '~/reducers/authReducer';
 
 import setAuthToken from '~/utils/setAuthToken';
 import { LOCAL_STORAGE_TOKEN_NAME } from '~/Services/constants';
-import * as httpRequest from '~/utils/httpRequest';
+import * as loginUserService from '~/Services/loginUserService';
 import { SET_AUTH } from '~/Services/constants';
 
 export const AuthContext = createContext();
@@ -23,11 +23,12 @@ const AuthContextProvider = ({ children }) => {
         const getToken = localStorage.getItem(LOCAL_STORAGE_TOKEN_NAME);
         if (getToken) {
             setAuthToken(getToken);
-            const response = await httpRequest.get('auth');
-            if (response.data.success) {
+            const response = await loginUserService.getUser();
+
+            if (response.success) {
                 dispatch({
                     type: SET_AUTH,
-                    payload: { isAuthenticated: true, user: response.data.user },
+                    payload: { isAuthenticated: true, user: response.user },
                 });
             }
         } else {
